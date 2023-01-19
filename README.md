@@ -12,9 +12,9 @@ module "vpc" {
     env = "some_env"
   }
 
-  enable_nat_global = true
-  enable_custom_rt  = true
-  custom_routes = [
+  enable_nat_global  = true
+  enable_route_table = true
+  routes = [
     {
       destination_prefix = "1.1.1.0/24"
       next_hop_address   = "10.10.10.10"
