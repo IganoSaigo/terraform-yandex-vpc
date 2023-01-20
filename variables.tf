@@ -6,6 +6,7 @@ variable "name" {
 variable "folder_id" {
   description = "Folder_id where to create resources"
   type        = string
+  default     = null
 }
 
 variable "labels" {
