@@ -18,8 +18,12 @@ resource "yandex_vpc_subnet" "this" {
   description    = "${var.description} subnet in ${each.value.zone} zone"
   zone           = each.value.zone
   v4_cidr_blocks = each.value.cidr_blocks
-  route_table_id = each.value.nat && var.enable_nat_global ? yandex_vpc_route_table.nat.id : local.main_table
-  labels         = var.labels
+  route_table_id = (
+    (each.value.nat && var.enable_nat_global)
+    ? yandex_vpc_route_table.nat.id
+    : local.main_table
+  )
+  labels = var.labels
 }
 
 resource "yandex_vpc_gateway" "nat" {
