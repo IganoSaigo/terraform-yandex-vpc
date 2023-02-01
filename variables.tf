@@ -4,25 +4,25 @@ variable "name" {
 }
 
 variable "folder_id" {
-  description = "Folder_id where to create resources"
+  description = "Folder ID"
   type        = string
   default     = null
 }
 
 variable "labels" {
-  description = "Map of labels for resources"
+  description = "A set of labels"
   type        = map(string)
   default     = {}
 }
 
 variable "description" {
-  description = "Description template for resources"
+  description = "Description template"
   type        = string
   default     = "Managed"
 }
 
 variable "enable_nat_global" {
-  description = "Global enable NAT Gateway. Must be set if nat='true' in var.subnets params"
+  description = "Global enable NAT. Must be set if nat='true' in var.subnets params"
   type        = bool
   default     = false
 }

@@ -20,6 +20,7 @@ output "subnets" {
 }
 
 output "rt" {
+  description = "Route table info"
   value = {
     "rt_main" = yandex_vpc_route_table.this,
     "rt_nat"  = yandex_vpc_route_table.nat
@@ -27,5 +28,6 @@ output "rt" {
 }
 
 output "gateway" {
-  value = yandex_vpc_gateway.nat
+  description = "Gateway Info"
+  value       = yandex_vpc_gateway.nat
 }
